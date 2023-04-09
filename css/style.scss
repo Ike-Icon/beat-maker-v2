@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&family=Rubik+Gemstones&display=swap');
 
 *{
-    margin: 0;
+    margin: 0 auto;
     padding: 5px;
     box-sizing: border-box;
 }
@@ -21,8 +21,8 @@ header{
 }
 
 
-.app{
-    height: 100vh;
+.beat-app{
+    height: 95vh;
     display: flex;
     flex-direction: column;
     justify-content:space-between;
@@ -37,83 +37,70 @@ header h1{
     font-weight: 8;
 }
 
-
-.pads{
+#pads {
+    // min-height: 100vh;
+    // align-items: center;
+    // justify-content: center;
     width: 100%;
     display: grid;
-    grid-gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-}
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    // display: flex;
+  }
 
-.pads > div{
-    height: 150px;
-    border-radius: 0px;
-    box-shadow:  0px 1px 14px;
-}
+#pads > div {
+    border: .1rem solid black;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 1.5rem;
+    padding: 1rem .5rem;
+    transition: all .07s ease;
+    width: 10rem;
+    text-align: center;
+    color: white;
+    // background: rgba(0,0,0,0.4);
+    text-shadow: 0 0 .5rem black;
+    box-shadow:  0px 1px 14px black;
+   
+  }
 
-
-.pad1{
+#pad1{
     background-color:#1eda4d ;
 
 }
 
-.pad2{
+#pad2{
     background-color: #FF5C33;
 }
 
-.pad3{
+#pad3{
     background-color:gold;
 }
 
-.pad4{
+#pad4{
     background-color:aqua;
 }
 
-.pad5{
+#pad5{
     background-color: #21003D;
 }
-.pad6{
+#pad6{
     background-color: #D7098F;
 }
 
-.pad7{
+#pad7{
     background-color:wheat ;
 }
-.pad8{
+#pad8{
     background-color:brown;
 }
 
 
-.pad1:hover{
+#pad9{
     background-color:#91f0a9 ;
 
 }
 
-.pad2:hover{
-    background-color: #ff5c33ab;
-}
-
-.pad3:hover{
-    background-color: rgb(248, 226, 103);
-}
-
-.pad4:hover{
-    background-color:rgb(21, 148, 148);
-}
-
-.pad5:hover{
-    background-color: #45057e;
-}
-.pad6:hover{
-    background-color:#c066a0;
-}
-
-.pad7:hover{
-    background-color:rgb(247, 201, 115) ;
-}
-.pad8:hover{
-    background-color:rgb(170, 76, 76);
-}
 
 .visual > div {
     position: absolute;
@@ -151,46 +138,8 @@ i{
 }
 
 
-
-
-
-
-// html {
-//   font-size: 10px;
-//   background: url('./background.jpg') bottom center;
-//   background-size: cover;
-// }
-
-// body,html {
-//   margin: 0;
-//   padding: 0;
-//   font-family: sans-serif;
-// }
-
-.keys {
-  display: flex;
-  flex: 1;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
-
-.key {
-  border: .4rem solid black;
-  border-radius: .5rem;
-  margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem .5rem;
-  transition: all .07s ease;
-  width: 10rem;
-  text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.4);
-  text-shadow: 0 0 .5rem black;
-}
-
 .playing {
-  transform: scale(1.1);
+  transform: scale(1.2);
   border-color: #ffc600;
   box-shadow: 0 0 1rem #ffc600;
 }
@@ -204,5 +153,33 @@ kbd {
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: .1rem;
-  color: #ffc600;
+  color: black;
+}
+
+
+@media only screen and (min-width: 576px) {
+
+    header p{
+        font-size: 25px;
+    }
+
+    header h1{
+        font-size: 60px;
+        font-weight: 12;
+    }
+
+    #pads{
+        grid-gap: 5px;
+    }
+
+    #pads > div{
+        height: 200px;
+        border-radius: 5px;
+        box-shadow:  0px 1px 14px;
+    }
+
+    i{
+        font-size: 50px;
+        margin-top: 20px;
+    }
 }

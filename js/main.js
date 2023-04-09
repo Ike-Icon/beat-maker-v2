@@ -30,6 +30,7 @@ function removeTransition(e) {
     "brown",
   ];
   
+  // add jumping balls to the pad when it is clicked on 
   pads.forEach((pad, index) => {
     pad.addEventListener("click", () => {
       playSound(sounds[index]);
@@ -37,10 +38,18 @@ function removeTransition(e) {
     });
   });
   
-  window.addEventListener("keydown", (e) => {
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    playSound(audio);
+ 
+
+  // add color balls to pad when key is pressed
+  window.addEventListener('keydown', (event) => {
+    const audio = document.querySelector(`audio[data-key="${event.keyCode}"]`);
+    const index = Array.from(pads).findIndex(pad => pad.getAttribute('data-key') == event.keyCode);
+    if (audio) {
+      playSound(audio);
+      jumpingBalls(index);
+    }
   });
+  
   
   function jumpingBalls(index) {
     const balls = document.createElement("div");
